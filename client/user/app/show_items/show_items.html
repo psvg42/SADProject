@@ -1,0 +1,35 @@
+<div>
+	<div style="text-align: center; margin-bottom: 100px">
+		<span class="alert alert-info" data-bind="visible: busy()">Processing...</span>
+	</div>
+
+	<table class="table table-bordered table-hover">
+		<thead>
+			<th>Title</th>
+			<th>Description</th>
+			<th>Price</th>
+			<th>Priority</th>
+			<th>Date</th>
+		</thead>
+		<tbody>
+
+
+			<!-- ko if: items().length == 0 -->
+			<tr>
+				<td colspan="5" style="text-align: center;">No results</td>
+			</tr>
+			<!-- /ko -->
+			<!-- ko foreach: items -->
+			<tr class="selectable-row">
+				<td data-bind="text: title"></td>
+				<td data-bind="text: description"></td>
+				<td data-bind="text: price"></td>
+				<td data-bind="text: priority"></td>
+				<td data-bind="text: date"></td>
+			</tr>
+			<!-- /ko -->
+		</tbody>
+	</table>
+			<button type="button" class="btn btn-primary pull-left" disabled="disabled">Prev</button>
+			<button type="button" class="btn btn-primary pull-right" disabled="disabled">Next	</button> 
+</div>
